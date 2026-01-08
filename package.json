@@ -1,7 +1,8 @@
 {
   "name": "xen-language-support",
-  "displayName": "xen-language-support",
+  "displayName": "Xen Language Support",
   "description": "Add syntax highlighting support for Xen to VS Code",
+  "publisher": "Jake Rieger",
   "version": "0.1.0",
   "engines": {
     "vscode": "^1.107.0"
