@@ -1,0 +1,25 @@
+{
+  "name": "xen-language-support",
+  "displayName": "xen-language-support",
+  "description": "Add syntax highlighting support for Xen to VS Code",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "xen",
+      "aliases": ["Xen", "xen"],
+      "extensions": [".xen"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "xen",
+      "scopeName": "source.xen",
+      "path": "./syntaxes/xen.tmLanguage.json"
+    }]
+  }
+}

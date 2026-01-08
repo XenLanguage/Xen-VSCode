@@ -1,0 +1,195 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Xen",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#functions"
+        },
+        {
+            "include": "#operators"
+        },
+        {
+            "include": "#variables"
+        },
+        {
+            "include": "#constants"
+        },
+        {
+            "include": "#punctuation"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.double-slash.xen",
+                    "match": "//.*$"
+                },
+                {
+                    "name": "comment.block.xen",
+                    "begin": "/\\*",
+                    "end": "\\*/"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.xen",
+                    "match": "\\b(if|else|for|while|return|in|new|and|or|var|const|fn)\\b"
+                },
+                {
+                    "name": "keyword.other.xen",
+                    "match": "\\b(include|class)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "patterns": [
+                {
+                    "name": "string.quoted.double.xen",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.xen",
+                            "match": "\\\\(n|t|r|\\\\|\"|')"
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.xen",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.xen",
+                            "match": "\\\\(n|t|r|\\\\|\"|')"
+                        }
+                    ]
+                }
+            ]
+        },
+        "numbers": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.float.xen",
+                    "match": "\\b\\d+\\.\\d+\\b"
+                },
+                {
+                    "name": "constant.numeric.integer.xen",
+                    "match": "\\b\\d+\\b"
+                }
+            ]
+        },
+        "functions": {
+            "patterns": [
+                {
+                    "name": "entity.name.function.xen",
+                    "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+                },
+                {
+                    "name": "support.function.builtin.xen",
+                    "match": "\\b(number|typeof)\\b"
+                },
+                {
+                    "name": "support.function.module.xen",
+                    "match": "\\b(io|math|string|datetime|array)\\.(\\w+)\\b",
+                    "captures": {
+                        "1": {
+                            "name": "support.type.module.xen"
+                        },
+                        "2": {
+                            "name": "support.function.xen"
+                        }
+                    }
+                }
+            ]
+        },
+        "operators": {
+            "patterns": [
+                {
+                    "name": "keyword.operator.arithmetic.xen",
+                    "match": "(\\+\\+|--|\\+=|-=|\\*=|/=|%=|\\+|-|\\*|/|%)"
+                },
+                {
+                    "name": "keyword.operator.comparison.xen",
+                    "match": "(==|!=|<=|>=|=>|<|>)"
+                },
+                {
+                    "name": "keyword.operator.logical.xen",
+                    "match": "(&&|\\|\\||!)"
+                },
+                {
+                    "name": "keyword.operator.assignment.xen",
+                    "match": "="
+                },
+                {
+                    "name": "keyword.operator.range.xen",
+                    "match": "\\.\\."
+                }
+            ]
+        },
+        "variables": {
+            "patterns": [
+                {
+                    "name": "variable.other.constant.xen",
+                    "match": "\\b[A-Z_][A-Z0-9_]*\\b"
+                },
+                {
+                    "name": "variable.other.xen",
+                    "match": "\\b[a-z_][a-zA-Z0-9_]*\\b"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.language.xen",
+                    "match": "\\b(null|true|false)\\b"
+                }
+            ]
+        },
+        "punctuation": {
+            "patterns": [
+                {
+                    "name": "punctuation.terminator.statement.xen",
+                    "match": ";"
+                },
+                {
+                    "name": "punctuation.separator.comma.xen",
+                    "match": ","
+                },
+                {
+                    "name": "punctuation.section.braces.xen",
+                    "match": "[{}]"
+                },
+                {
+                    "name": "punctuation.section.brackets.xen",
+                    "match": "[\\[\\]]"
+                },
+                {
+                    "name": "punctuation.section.parens.xen",
+                    "match": "[()]"
+                },
+                {
+                    "name": "punctuation.accessor.xen",
+                    "match": "\\."
+                }
+            ]
+        }
+    },
+    "scopeName": "source.xen"
+}
